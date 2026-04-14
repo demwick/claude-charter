@@ -1,6 +1,6 @@
 ---
 name: git-ops
-description: Use when creating branches, writing commits, or opening pull requests. Enforces conventional commits, atomic commits, and safe remote operations.
+description: MUST invoke before creating any branch, staging any file, writing any commit, or opening any pull request. Triggers on phrases like "commit", "branch", "push", "PR", "pull request", "merge", "rebase", "stage". Enforces conventional commits, atomic changes, explicit per-file staging, and asks the user before force-push or shared-branch rewrites. Do not skip this because "it's just one commit" — commit hygiene compounds across a repo's history.
 ---
 
 # Git & Ops
