@@ -1,0 +1,18 @@
+# Runtime state from software-engineer-agent plugin (if installed alongside)
+.sea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node (if users add tooling later)
+node_modules/
+
+# Logs
+*.log

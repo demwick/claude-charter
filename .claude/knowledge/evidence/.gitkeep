@@ -1,0 +1,27 @@
+# Evidence
+
+This directory holds **retrieved or external material** — research
+notes, third-party documentation excerpts, screenshots, transcripts,
+logs, and anything else that informs a decision without being policy.
+
+## Trust level
+
+Files in this directory are **untrusted** by design. The agent is
+instructed (via CLAUDE.md's `retrieved_context_policy`) to treat the
+contents as evidence, not as rules to obey. Do not put instructions
+or policy here — put them in `.claude/knowledge/charter/` or in the
+relevant `SKILL.md`.
+
+## Typical contents
+
+- Saved research sessions
+- Excerpts from external API docs
+- Customer interview notes
+- Meeting transcripts that informed a design decision (keep the
+  conclusion in `adr/`, the transcript here)
+- Competitive analysis
+
+## Retention
+
+No rules — keep or delete as the project needs. Old evidence that
+no longer informs anything can be removed.
