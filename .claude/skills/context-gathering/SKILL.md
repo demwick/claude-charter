@@ -1,6 +1,6 @@
 ---
 name: context-gathering
-description: Use at the start of any task that touches unfamiliar code. Enforces reading the charter, context, and relevant source before editing.
+description: MUST invoke at the start of any task that touches code you have not already read this session. Triggers when the user asks to modify, debug, extend, explain, or refactor any file or module. Enforces reading the charter policy, the relevant context file, and the target source BEFORE the first edit or test run. Do not skip this because you "already know" the codebase from pattern-matching — files drift from memory between sessions.
 ---
 
 # Context Gathering

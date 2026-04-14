@@ -1,6 +1,6 @@
 ---
 name: security-review
-description: Use before merging any change that touches auth, secrets, input parsing, file uploads, network boundaries, or permissions. Enforces OWASP-aligned checks.
+description: MUST invoke before merging any change that touches authentication, authorization, sessions, secrets, API keys, user input parsing, file uploads, SQL or NoSQL queries, shell command construction, serialization, template rendering, or network boundaries. Triggers on words like "auth", "login", "token", "password", "query", "upload", "render", "exec", "eval", "deserialize", "webhook", "CORS". Runs an OWASP-aligned checklist. Do not declare a change "safe" based on reading the diff — trace the input from its source all the way to its sink.
 ---
 
 # Security Review

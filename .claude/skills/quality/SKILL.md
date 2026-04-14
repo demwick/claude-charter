@@ -1,6 +1,6 @@
 ---
 name: quality
-description: Use when fixing bugs, adding features, or before reporting any code change complete. Enforces reproduction-first debugging, verification with real commands, and named anti-shortcuts.
+description: MUST invoke before ANY code edit that fixes a bug, adds a feature, makes a failing test pass, implements behavior, or refactors logic. Triggers on phrases like "fix", "add", "implement", "make it work", "make tests pass", "resolve", "get rid of the error". Enforces reproduction-first debugging and real-command verification after the change. Do not rationalize skipping this for "trivial" or "obvious" changes — obvious bugs regress silently without a reproduction test.
 ---
 
 # Quality & Testing
