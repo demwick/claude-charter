@@ -2,7 +2,7 @@
 description: Draft an Architectural Decision Record for the most recent architectural decision in this conversation.
 ---
 
-# workspace:adr
+# /adr
 
 You are drafting an ADR based on an architectural decision made in
 the current conversation. The goal is to capture the decision so a

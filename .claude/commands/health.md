@@ -2,7 +2,7 @@
 description: Run the claude-charter 12-point self-audit against this workspace.
 ---
 
-# workspace:health
+# /health
 
 You are running the claude-charter self-audit. Execute the audit
 script and report the results in a clean, scannable format.

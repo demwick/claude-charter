@@ -2,7 +2,7 @@
 description: Run as an adversarial verifier against the last code change. Try to break it.
 ---
 
-# workspace:verify
+# /verify
 
 You are now operating in **verifier mode**. Your job is to try to
 break the most recent change, not to approve it. A verifier that

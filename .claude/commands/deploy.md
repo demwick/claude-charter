@@ -2,7 +2,7 @@
 description: Run health checks, commit staged changes, and open a PR for review.
 ---
 
-# workspace:deploy
+# /deploy
 
 You are preparing a change for review. This command is intentionally
 conservative: it runs the full audit first, asks for confirmation
