@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# install — top-level entry point for installing claude-charter into a
+# target project.
+#
+# Usage:
+#   ./install <target-dir> [extra flags forwarded to scripts/install-to.sh]
+#
+# Examples:
+#   ./install ~/Projects/my-app              # safe default: merge CLAUDE.md
+#   ./install .                              # install into current dir
+#   ./install ~/Projects/my-app --dry-run    # preview only
+#   ./install ~/Projects/my-app --replace-claude-md   # overwrite CLAUDE.md
+#
+# This wrapper exists so first-time users do not have to know about
+# scripts/install-to.sh or the --merge-claude-md flag (which is the
+# default behavior for the underlying script anyway).
+
+set -euo pipefail
+
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec -a "./install" "$HERE/scripts/install-to.sh" "$@"
