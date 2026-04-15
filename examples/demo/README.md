@@ -59,9 +59,44 @@ The observation is not whether the bug gets fixed — that's trivial — but
 
 Findings from each run go in `NOTES.md`.
 
-## Not a real project
+## Not a real project — what this fixture can and cannot test
 
 This is deliberately sterile: no dependencies, no git history, no prod
-stakes. It's the cheapest possible fixture that still exercises the
-full charter workflow. Phase B of live-testing uses a real passive
-repo (`multi-mind`) for comparison against a non-sterile codebase.
+stakes. It is the cheapest possible fixture that still exercises
+charter skill invocation.
+
+**What Phase A runs on this fixture CAN test:**
+
+- Whether imperative skill descriptions trigger `Skill(...)` invocation
+  on a keyword-matching task prompt.
+- Whether `<known_failure_patterns>` in `CLAUDE.md` affect the model's
+  default behavior (reproduction-first, minimal fix, evidence-bearing
+  exit reports).
+- Whether `scripts/guardrails.sh` stays silent on benign commands and
+  asks on destructive ones.
+
+**What this fixture CANNOT test:**
+
+1. Whether `context-gathering` actually reads
+   `.claude/knowledge/charter/` and `.claude/knowledge/context/` files
+   as its numbered procedure requires — the fixture's context files
+   are TODO placeholders, so skipping them is rational and
+   observationally indistinguishable from procedure-skimming.
+2. Whether `<workspace_scope>` prevents sibling-directory navigation
+   — the fixture has no siblings to navigate to.
+3. Whether the `UserPromptSubmit` hook-based skill router raises
+   invocation rate on tasks whose descriptions don't precisely match
+   skill triggers — sterile prompts are too short to exercise the
+   false-positive / false-negative edges.
+
+**Phase B runs the same charter against a real codebase** (currently
+tested on the `multi-mind-charter` worktree) to close these gaps.
+Phase B Run 1 (2026-04-15, charter v0.1.1) found that
+`Skill(context-gathering)` did **not** trigger on real code despite
+triggering cleanly on this fixture — the gap that drove charter
+v0.1.2's `<workspace_scope>` block, imperative `<skills_index>`
+rewrite, and `scripts/prompt-router.sh` hook. See `PHASE_B_RESULTS.md`
+in the charter test worktree for the full audit.
+
+If you fork this template for your own project, do Phase B on your
+own real codebase before trusting this fixture's green signal.
