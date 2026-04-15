@@ -55,7 +55,7 @@ each step, not just at the end.
 
 If `software-engineer-agent` is installed, its
 `/software-engineer-agent:go` command can handle multi-phase
-deployments with richer state tracking. `workspace:deploy` is the
+deployments with richer state tracking. `/deploy` is the
 standalone fallback and does not require the plugin.
 
 ## Known failure patterns to avoid
