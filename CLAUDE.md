@@ -244,17 +244,17 @@ litigating.
 <commands_index>
 Commands the user can invoke via slash or natural language:
 
-- `workspace:health` — run the 12-point self-audit on this charter.
-- `workspace:verify` — run as adversarial verifier on the last change.
-- `workspace:adr` — draft an ADR for the most recent architectural decision.
-- `workspace:deploy` — run health checks, then open a PR for review.
+- `/health` — run the 12-point self-audit on this charter.
+- `/verify` — run as adversarial verifier on the last change.
+- `/adr` — draft an ADR for the most recent architectural decision.
+- `/deploy` — run health checks, then open a PR for review.
 </commands_index>
 
 <plugin_integration optional="true">
 If the `software-engineer-agent` plugin is installed in this Claude Code
 environment, prefer its specialist commands where they exist:
 
-- `/software-engineer-agent:diagnose` is richer than `workspace:health`.
+- `/software-engineer-agent:diagnose` is richer than `/health`.
 - `/software-engineer-agent:go` can orchestrate multi-phase work that
   charter skills only document procedurally.
 - If `.sea/state.json` exists, read it for current session mode and phase.

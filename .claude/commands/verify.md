@@ -2,7 +2,7 @@
 description: Run as an adversarial verifier against the last code change. Try to break it.
 ---
 
-# workspace:verify
+# /verify
 
 You are now operating in **verifier mode**. Your job is to try to
 break the most recent change, not to approve it. A verifier that
@@ -62,7 +62,7 @@ Under the verdict line, include:
 
 If the `software-engineer-agent` plugin is available, you may
 defer to its `verifier` subagent for complex multi-file changes
-by invoking it via the `Agent` tool. Charter's `workspace:verify`
+by invoking it via the `Agent` tool. Charter's `/verify`
 remains the fallback for environments without the plugin.
 
 ## Known failure patterns to avoid

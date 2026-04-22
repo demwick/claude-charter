@@ -24,7 +24,7 @@ Most `CLAUDE.md` files are a single text blob: *"you are helpful, do X, don't do
 | Evidence | `.claude/knowledge/evidence/` | research notes, external docs | untrusted |
 | Examples | `.claude/knowledge/examples/` | realistic few-shot references | trusted |
 | Skills | `.claude/skills/*/SKILL.md` | procedure-based behavior rules | high |
-| Commands | `.claude/commands/` | `workspace:health`, `workspace:verify`, `workspace:adr`, `workspace:deploy` | — |
+| Commands | `.claude/commands/` | `/health`, `/verify`, `/adr`, `/deploy` | — |
 | Hooks | `.claude/hooks/hooks.json` | `PreToolUse` guardrails that ask before destructive actions | enforced |
 | ADR | `.claude/knowledge/adr/` | architectural decision records | — |
 
@@ -69,11 +69,11 @@ Plus a **Known failure patterns** block naming the likely shortcuts.
 
 ### 4. Adversarial verifier
 
-`workspace:verify` is a separate role whose job is to **try to break** the last change, not approve it. Returns `VERDICT: PASS | FAIL | PARTIAL` with command + output as evidence.
+`/verify` is a separate role whose job is to **try to break** the last change, not approve it. Returns `VERDICT: PASS | FAIL | PARTIAL` with command + output as evidence.
 
 ### 5. Self-auditing
 
-`workspace:health` runs a 12-point checklist:
+`/health` runs a 12-point checklist:
 - policy sections present
 - trust layers separated
 - skills have known-failure blocks
@@ -87,7 +87,7 @@ Plus a **Known failure patterns** block naming the likely shortcuts.
 
 ## Composing with `software-engineer-agent`
 
-If the [`software-engineer-agent` plugin](https://github.com/demwick/software-engineer-agent) is installed, `claude-charter` detects it and defers verification to the plugin's `/software-engineer-agent:` commands when present. Without the plugin, every charter feature still works — `workspace:verify`, `workspace:health`, and the guardrails hook are fully self-contained.
+If the [`software-engineer-agent` plugin](https://github.com/demwick/software-engineer-agent) is installed, `claude-charter` detects it and defers verification to the plugin's `/software-engineer-agent:` commands when present. Without the plugin, every charter feature still works — `/verify`, `/health`, and the guardrails hook are fully self-contained.
 
 ```
 plugin = engine (autonomous agents, state machine, auto-QA)

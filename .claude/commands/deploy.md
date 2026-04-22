@@ -2,7 +2,7 @@
 description: Run health checks, commit staged changes, and open a PR for review.
 ---
 
-# workspace:deploy
+# /deploy
 
 You are preparing a change for review. This command is intentionally
 conservative: it runs the full audit first, asks for confirmation
@@ -55,7 +55,7 @@ each step, not just at the end.
 
 If `software-engineer-agent` is installed, its
 `/software-engineer-agent:go` command can handle multi-phase
-deployments with richer state tracking. `workspace:deploy` is the
+deployments with richer state tracking. `/deploy` is the
 standalone fallback and does not require the plugin.
 
 ## Known failure patterns to avoid
